@@ -164,20 +164,20 @@ services:
     networks:
       - confluent
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
-    restart: always
-    ports:
-      - "8888:80"
+  db:
+    image: mysql:8.0
     environment:
-      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
-      PGADMIN_DEFAULT_PASSWORD: strong-password
+      MYSQL_ROOT_PASSWORD: very_strong_password
+      MYSQL_DATABASE: licence-plate
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: very_strong_password
+    ports:
+      - "3307:3307"
     volumes:
-      - pgadmin_data:/var/lib/pgadmin
+      - db_data:/var/lib/mysql
 
 networks:
   confluent:
 
 volumes:
-  pgadmin_data:
+  db_data:
