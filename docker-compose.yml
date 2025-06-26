@@ -166,12 +166,12 @@ services:
 
   db:
     image: mysql:8.0
+    container_name: license-plate-mysql
     environment:
       MYSQL_ROOT_PASSWORD: super_secret_password
-      MYSQL_USER: copter50029
-      MYSQL_PASSWORD: copter12345
+      MYSQL_DATABASE: licence-plate
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
       - ./script/init.sql:/docker-entrypoint-initdb.d/init.sql
