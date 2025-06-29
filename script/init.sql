@@ -1,7 +1,8 @@
 CREATE USER IF NOT EXISTS 'copter50029'@'%' IDENTIFIED BY 'copter12345';
 GRANT ALL PRIVILEGES ON *.* TO 'copter50029'@'%';
 FLUSH PRIVILEGES;
-
+-- login to mysql with the following command
+-- docker exec -it license-plate-mysql mysql -u copter50029 -p'copter12345' licence-plate
 USE `licence-plate`;
 
 CREATE TABLE IF NOT EXISTS `license_plates` (
