@@ -2,3 +2,4 @@
 docker/config/airflow.cfg
 docker/.env
 .env
+main/__pycache__/
